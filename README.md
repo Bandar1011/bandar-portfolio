@@ -2,7 +2,7 @@
 
 My personal portfolio.
 
-**Live:** https://portfolio-ivory-eight-83.vercel.app
+**Live:** https://bandaralharthy.com
 
 ## Stack
 
