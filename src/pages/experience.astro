@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHeader from "../components/PageHeader.astro";
+import Section from "../components/Section.astro";
+import ExperienceRow from "../components/ExperienceRow.astro";
+import { experience } from "../data/experience";
+---
+
+<BaseLayout
+  title="Experience — Bandar Alharthy"
+  description="Roles, companies, and a few things shipped at each."
+>
+  <PageHeader
+    marker="§ 03"
+    title="Experience"
+    kicker="A short timeline of roles, with the work I'm proudest of from each."
+  />
+
+  <main>
+    <Section number="01" title="Timeline" ruleTop={false}>
+      <div class="rule-soft-t">
+        {experience.map((e, i) => <ExperienceRow item={e} index={i} />)}
+      </div>
+    </Section>
+  </main>
+</BaseLayout>

@@ -1,0 +1,51 @@
+---
+interface Props {
+  marker: string;
+  title: string;
+  kicker?: string;
+  italicWord?: string;
+}
+
+const { marker, title, kicker, italicWord } = Astro.props;
+
+let leading = "";
+let italic = title;
+let trailing = "";
+
+if (italicWord && title.includes(italicWord)) {
+  const idx = title.indexOf(italicWord);
+  leading = title.slice(0, idx);
+  italic = italicWord;
+  trailing = title.slice(idx + italicWord.length);
+} else {
+  italic = title;
+}
+---
+
+<section class="relative rule-b">
+  <div
+    class="mx-auto max-w-[1400px] px-6 md:px-10 pt-[140px] md:pt-[200px] lg:pt-[220px] pb-20 md:pb-28 text-center"
+  >
+    <div class="label mb-8 md:mb-10 flex items-center justify-center gap-3">
+      <span>{marker}</span>
+      <span class="text-muted" aria-hidden="true">/</span>
+      <span class="text-muted">Page</span>
+    </div>
+
+    <h1
+      class="font-display font-semibold text-[3rem] sm:text-7xl md:text-8xl lg:text-[9rem] xl:text-[11rem] leading-[0.95] tracking-[-0.035em]"
+    >
+      {leading && <span>{leading}</span>}
+      <span class="italic font-medium text-[var(--accent)]">{italic}</span>
+      {trailing && <span>{trailing}</span>}
+    </h1>
+
+    {
+      kicker && (
+        <p class="mt-8 md:mt-12 text-lg md:text-xl lg:text-2xl text-muted max-w-[50ch] mx-auto leading-snug">
+          {kicker}
+        </p>
+      )
+    }
+  </div>
+</section>

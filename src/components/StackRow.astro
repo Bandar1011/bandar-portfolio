@@ -1,0 +1,27 @@
+---
+import type { StackGroup } from "../data/stack";
+
+interface Props {
+  group: StackGroup;
+}
+
+const { group } = Astro.props;
+---
+
+<div class="rule-soft-b py-6 md:py-7 grid grid-cols-12 gap-x-4 md:gap-x-6 items-baseline">
+  <span class="label col-span-12 md:col-span-3">{group.label}</span>
+  <p
+    class="col-span-12 md:col-span-9 text-xl md:text-2xl tracking-[-0.01em] leading-[1.2]"
+  >
+    {
+      group.items.map((item, i) => (
+        <>
+          <span>{item}</span>
+          {i < group.items.length - 1 && (
+            <span class="text-muted mx-2.5">·</span>
+          )}
+        </>
+      ))
+    }
+  </p>
+</div>

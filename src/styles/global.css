@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", "Times New Roman", Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --color-paper: #0a0a0a;
+  --color-ink: #f4f4f2;
+  --color-muted: #8a8a87;
+  --color-rule: rgba(244, 244, 242, 0.16);
+  --color-accent: #f3d77b;
+
+  --tracking-tight: -0.02em;
+  --tracking-label: 0.14em;
+}
+
+:root {
+  --paper: #0a0a0a;
+  --ink: #f4f4f2;
+  --muted: #8a8a87;
+  --rule: rgba(244, 244, 242, 0.16);
+  --rule-soft: rgba(244, 244, 242, 0.08);
+  --accent: #f3d77b;
+  color-scheme: dark;
+}
+
+@layer base {
+  html {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    scroll-padding-top: 80px;
+  }
+
+  body {
+    min-height: 100dvh;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--paper);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+@utility rule-t {
+  border-top: 1px solid var(--rule);
+}
+@utility rule-b {
+  border-bottom: 1px solid var(--rule);
+}
+@utility rule-soft-t {
+  border-top: 1px solid var(--rule-soft);
+}
+@utility rule-soft-b {
+  border-bottom: 1px solid var(--rule-soft);
+}
+@utility rule-double-b {
+  border-bottom: 3px double var(--rule);
+}
+
+@utility label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+@utility text-ink {
+  color: var(--ink);
+}
+@utility text-muted {
+  color: var(--muted);
+}
+@utility text-accent {
+  color: var(--accent);
+}
+@utility bg-paper {
+  background-color: var(--paper);
+}
+@utility font-display {
+  font-family: var(--font-display);
+}
+@utility font-sans {
+  font-family: var(--font-sans);
+}
+@utility font-mono {
+  font-family: var(--font-mono);
+}
