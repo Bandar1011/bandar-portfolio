@@ -1,42 +1,16 @@
 ---
 interface Props {
-  number: string;
-  title: string;
+  title?: string;
   ruleTop?: boolean;
   id?: string;
 }
 
-const { number, title, ruleTop = true, id } = Astro.props;
+const { title, ruleTop = false, id } = Astro.props;
 ---
 
-<section id={id} class:list={[ruleTop && "rule-t"]}>
-  <div
-    class="mx-auto max-w-[1400px] px-6 md:px-10 pt-16 md:pt-24 pb-20 md:pb-28"
-  >
-    <div class="grid grid-cols-12 gap-x-4 md:gap-x-6 gap-y-8">
-      <!-- Gutter: serif italic section number -->
-      <div class="col-span-12 md:col-span-2">
-        <div
-          class="font-display italic text-7xl md:text-[6rem] lg:text-[8rem] xl:text-[9rem] tracking-[-0.04em] font-medium leading-[0.82] text-[var(--accent)] opacity-[0.35] select-none"
-          aria-hidden="true"
-        >
-          {number}
-        </div>
-      </div>
-
-      <!-- Content column -->
-      <div class="col-span-12 md:col-span-10">
-        <header
-          class="flex items-baseline gap-3 mb-8 md:mb-10 rule-double-b pb-3"
-        >
-          <span class="label">{title}</span>
-          <span class="ml-auto label text-muted hidden md:inline">
-            § {number}
-          </span>
-        </header>
-
-        <slot />
-      </div>
-    </div>
+<section id={id} class:list={[ruleTop && "rule-soft-t"]}>
+  <div class="mx-auto max-w-[900px] px-6 py-10 md:py-14">
+    {title && <h2 class="label mb-6 md:mb-8">{title}</h2>}
+    <slot />
   </div>
 </section>

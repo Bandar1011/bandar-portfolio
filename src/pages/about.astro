@@ -1,61 +1,28 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHeader from "../components/PageHeader.astro";
-import Section from "../components/Section.astro";
-import PrincipleRow from "../components/PrincipleRow.astro";
 import { about } from "../data/about";
-import { principles } from "../data/principles";
 ---
 
-<BaseLayout title="About — Bandar Alharthy" description={about.lead}>
-  <PageHeader
-    marker="§ 02"
-    title="About"
-    kicker="Where I'm from, what I'm working on, and how I think about engineering."
-  />
+<BaseLayout title="About Me ·Bandar Alharthi" description={about.lead}>
+  <PageHeader title="About Me" kicker={about.lead} />
 
   <main>
-    <Section number="01" title="Bio" ruleTop={false}>
-      <div class="grid grid-cols-12 gap-x-4 md:gap-x-6 gap-y-10">
-        <div class="col-span-12 md:col-span-7">
-          <p
-            class="text-2xl md:text-3xl lg:text-[2.25rem] leading-[1.15] tracking-[-0.02em] font-semibold max-w-[26ch]"
-          >
-            {about.lead}
-          </p>
-          <div class="mt-8 md:mt-10 space-y-5 max-w-[58ch]">
-            {
-              about.paragraphs.map((p) => (
-                <p class="text-base md:text-[17px] leading-relaxed text-muted">
-                  {p}
-                </p>
-              ))
-            }
-          </div>
-        </div>
-
-        <aside
-          class="col-span-12 md:col-span-5 md:pl-8 md:border-l border-[color:var(--rule-soft)]"
-        >
-          <div class="label mb-4 md:mb-5">Fact sheet</div>
-          <dl class="divide-y divide-[color:var(--rule-soft)]">
-            {
-              about.facts.map((fact) => (
-                <div class="py-3.5 grid grid-cols-3 gap-3 items-baseline">
-                  <dt class="label col-span-1">{fact.label}</dt>
-                  <dd class="col-span-2 text-[15px]">{fact.value}</dd>
-                </div>
-              ))
-            }
-          </dl>
-        </aside>
+    <div class="mx-auto max-w-[900px] px-6 pb-10">
+      <div class="space-y-5 text-[17px] leading-relaxed">
+        {about.paragraphs.map((p) => <p>{p}</p>)}
       </div>
-    </Section>
 
-    <Section number="02" title="Principles">
-      <div class="rule-soft-t">
-        {principles.map((p, i) => <PrincipleRow principle={p} index={i} />)}
-      </div>
-    </Section>
+      <dl class="mt-12 rule-soft-t">
+        {
+          about.facts.map((fact) => (
+            <div class="py-4 rule-soft-b grid grid-cols-3 gap-4 items-baseline">
+              <dt class="label col-span-1">{fact.label}</dt>
+              <dd class="col-span-2 text-[15px]">{fact.value}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
   </main>
 </BaseLayout>

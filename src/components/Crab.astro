@@ -1,0 +1,109 @@
+---
+---
+
+<div
+  class="crab-stage"
+  role="img"
+  aria-label="A small pixel-art crab walking back and forth between two dots"
+>
+  <span class="dot" aria-hidden="true"></span>
+
+  <div class="crab-walker">
+    <div class="crab-bob">
+      <svg
+        viewBox="0 0 9 7"
+        xmlns="http://www.w3.org/2000/svg"
+        class="crab-svg"
+        shape-rendering="crispEdges"
+      >
+        <!-- Top claw bumps -->
+        <rect x="1" y="0" width="1" height="1" fill="#D97757"></rect>
+        <rect x="7" y="0" width="1" height="1" fill="#D97757"></rect>
+
+        <!-- Body block -->
+        <rect x="0" y="1" width="9" height="4" fill="#D97757"></rect>
+
+        <!-- Eyes -->
+        <rect x="2" y="2" width="1" height="2" fill="#0a0a0a"></rect>
+        <rect x="6" y="2" width="1" height="2" fill="#0a0a0a"></rect>
+
+        <!-- Legs -->
+        <rect x="1" y="5" width="1" height="2" fill="#D97757"></rect>
+        <rect x="4" y="5" width="1" height="2" fill="#D97757"></rect>
+        <rect x="7" y="5" width="1" height="2" fill="#D97757"></rect>
+      </svg>
+    </div>
+  </div>
+
+  <span class="dot" aria-hidden="true"></span>
+</div>
+
+<style>
+  .crab-stage {
+    position: relative;
+    width: 84px;
+    height: 32px;
+    display: inline-block;
+    flex-shrink: 0;
+    vertical-align: middle;
+  }
+
+  .crab-stage .dot {
+    position: absolute;
+    top: 50%;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #0a0a0a;
+    transform: translateY(-50%);
+  }
+  .crab-stage .dot:first-of-type {
+    left: 1px;
+  }
+  .crab-stage .dot:last-of-type {
+    right: 1px;
+  }
+
+  .crab-walker {
+    position: absolute;
+    left: 7px;
+    top: 50%;
+    animation: crab-walk 4s ease-in-out infinite alternate;
+  }
+  @keyframes crab-walk {
+    from {
+      transform: translate(0, -50%);
+    }
+    to {
+      transform: translate(38px, -50%);
+    }
+  }
+
+  .crab-bob {
+    animation: crab-bob 0.4s steps(2) infinite;
+  }
+  @keyframes crab-bob {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-1px);
+    }
+  }
+
+  .crab-svg {
+    width: 36px;
+    height: auto;
+    display: block;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .crab-walker,
+    .crab-bob {
+      animation: none;
+    }
+  }
+</style>

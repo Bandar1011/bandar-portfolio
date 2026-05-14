@@ -1,29 +1,26 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Fraunces", "Times New Roman", Georgia, serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
     Roboto, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
-  --color-paper: #0a0a0a;
-  --color-ink: #f4f4f2;
-  --color-muted: #8a8a87;
-  --color-rule: rgba(244, 244, 242, 0.16);
-  --color-accent: #f3d77b;
+  --color-paper: #ffffff;
+  --color-ink: #0a0a0a;
+  --color-muted: #6b6b6b;
+  --color-rule: #0a0a0a;
 
   --tracking-tight: -0.02em;
-  --tracking-label: 0.14em;
+  --tracking-label: 0.08em;
 }
 
 :root {
-  --paper: #0a0a0a;
-  --ink: #f4f4f2;
-  --muted: #8a8a87;
-  --rule: rgba(244, 244, 242, 0.16);
-  --rule-soft: rgba(244, 244, 242, 0.08);
-  --accent: #f3d77b;
-  color-scheme: dark;
+  --paper: #ffffff;
+  --ink: #0a0a0a;
+  --muted: #6b6b6b;
+  --rule: rgba(10, 10, 10, 0.85);
+  --rule-soft: rgba(10, 10, 10, 0.12);
+  color-scheme: light;
 }
 
 @layer base {
@@ -31,7 +28,6 @@
     background: var(--paper);
     color: var(--ink);
     font-family: var(--font-sans);
-    font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     scroll-padding-top: 80px;
@@ -42,7 +38,7 @@
   }
 
   ::selection {
-    background: var(--accent);
+    background: var(--ink);
     color: var(--paper);
   }
 
@@ -53,19 +49,16 @@
 }
 
 @utility rule-t {
-  border-top: 1px solid var(--rule);
+  border-top: 1px solid var(--rule-soft);
 }
 @utility rule-b {
-  border-bottom: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule-soft);
 }
 @utility rule-soft-t {
   border-top: 1px solid var(--rule-soft);
 }
 @utility rule-soft-b {
   border-bottom: 1px solid var(--rule-soft);
-}
-@utility rule-double-b {
-  border-bottom: 3px double var(--rule);
 }
 
 @utility label {
@@ -82,14 +75,8 @@
 @utility text-muted {
   color: var(--muted);
 }
-@utility text-accent {
-  color: var(--accent);
-}
 @utility bg-paper {
   background-color: var(--paper);
-}
-@utility font-display {
-  font-family: var(--font-display);
 }
 @utility font-sans {
   font-family: var(--font-sans);

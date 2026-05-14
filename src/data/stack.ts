@@ -6,18 +6,22 @@ export interface StackGroup {
 export const stack: StackGroup[] = [
   {
     label: "Languages",
-    items: ["TypeScript", "Python", "Go"],
+    items: ["TypeScript", "JavaScript"],
   },
   {
-    label: "Runtime",
-    items: ["Node", "Bun", "Postgres"],
+    label: "Frameworks",
+    items: ["React", "Next.js"],
   },
   {
-    label: "Infrastructure",
-    items: ["Cloudflare", "AWS", "Vercel"],
+    label: "Data",
+    items: ["Prisma", "Supabase", "MongoDB"],
   },
   {
-    label: "Tools",
-    items: ["Linear", "Figma", "Cursor", "Claude"],
+    label: "APIs",
+    items: ["REST", "Gemini API"],
+  },
+  {
+    label: "Tooling",
+    items: ["Git", "GitHub", "Vercel"],
   },
 ];

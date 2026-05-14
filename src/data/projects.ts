@@ -12,10 +12,10 @@ export const projects: Project[] = [
   {
     slug: "resumeai",
     title: "Resume AI",
-    kind: "Product",
+    kind: "SaaS",
     year: 2026,
     summary:
-      "An AI résumé builder that writes the way recruiters actually read — focused on signal, not filler.",
+      "AI résumé SaaS. 1,000+ users, 330+ trial starts, and over $1,000 in revenue. Full stack from scratch, including auth, database, and AI workflows.",
     href: "https://resumeai.guru",
     external: true,
   },

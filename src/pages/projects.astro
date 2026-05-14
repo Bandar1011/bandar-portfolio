@@ -1,40 +1,24 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHeader from "../components/PageHeader.astro";
-import Section from "../components/Section.astro";
 import ProjectRow from "../components/ProjectRow.astro";
-import StackRow from "../components/StackRow.astro";
 import { projects } from "../data/projects";
-import { stack } from "../data/stack";
 ---
 
 <BaseLayout
-  title="Projects — Bandar Alharthy"
-  description="Selected projects and the tools I build with."
+  title="Projects ·Bandar Alharthi"
+  description="Selected projects."
 >
   <PageHeader
-    marker="§ 01"
     title="Projects"
-    kicker="Things I'm shipping right now, and the stack I reach for first."
+    kicker="Things I'm shipping right now."
   />
 
   <main>
-    <Section number="01" title="Selected work" ruleTop={false}>
-      <div class="grid grid-cols-12 gap-x-4 md:gap-x-6 rule-soft-b pb-3">
-        <span class="label col-span-2 md:col-span-1">№</span>
-        <span class="label col-span-10 md:col-span-7">Project</span>
-        <span class="hidden md:block label col-span-3 text-right">
-          Kind &nbsp;·&nbsp; Year
-        </span>
-        <span class="hidden md:block label col-span-1 text-right">↗</span>
-      </div>
-      {projects.map((p, i) => <ProjectRow project={p} index={i} />)}
-    </Section>
-
-    <Section number="02" title="Stack">
+    <div class="mx-auto max-w-[900px] px-6">
       <div class="rule-soft-t">
-        {stack.map((g) => <StackRow group={g} />)}
+        {projects.map((p) => <ProjectRow project={p} />)}
       </div>
-    </Section>
+    </div>
   </main>
 </BaseLayout>

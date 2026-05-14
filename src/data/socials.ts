@@ -32,7 +32,8 @@ export const socials: Social[] = [
   },
   {
     label: "Email",
-    handle: "support@namiai.cloud",
-    href: "mailto:support@namiai.cloud",
+    handle: "bandarmatab55@gmail.com",
+    href: "https://mail.google.com/mail/?view=cm&fu=1&to=bandarmatab55@gmail.com",
+    external: true,
   },
 ];

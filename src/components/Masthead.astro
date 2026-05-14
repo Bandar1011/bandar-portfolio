@@ -1,98 +1,60 @@
 ---
+import Crab from "./Crab.astro";
+import { socials } from "../data/socials";
+
+const age = 20;
 ---
 
-<section
-  class="relative min-h-[100dvh] flex items-center justify-center overflow-hidden bg-[#0a0a0a]"
->
-  <!-- Background photo -->
-  <img
-    src="/bandar.jpg"
-    alt=""
-    aria-hidden="true"
-    class="absolute inset-0 w-full h-full object-cover object-[center_top] opacity-90"
-  />
-
-  <!-- Darkening + vignette overlays -->
-  <div
-    class="absolute inset-0 bg-gradient-to-b from-[rgba(10,10,10,0.25)] via-[rgba(10,10,10,0.2)] to-[rgba(10,10,10,0.85)]"
-    aria-hidden="true"
-  >
-  </div>
-  <div
-    class="absolute inset-0"
-    style="background: radial-gradient(ellipse at center, transparent 0%, rgba(10,10,10,0.25) 100%);"
-    aria-hidden="true"
-  >
-  </div>
-
-  <!-- Content -->
-  <div
-    class="relative z-10 mx-auto max-w-[1400px] w-full px-6 md:px-10 text-center"
-  >
-    <!-- Badge -->
-    <div
-      class="inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-[rgba(243,215,123,0.4)] bg-[rgba(243,215,123,0.04)] mb-10 md:mb-12"
-    >
-      <span
-        class="inline-block w-1.5 h-1.5 rounded-full bg-[var(--accent)]"
-        aria-hidden="true"></span>
-      <span class="label !text-accent !text-[0.65rem] tracking-[0.22em]">
-        Software Engineer
-      </span>
+<section>
+  <div class="mx-auto max-w-[640px] px-6 pt-20 md:pt-28 pb-16">
+    <div class="flex flex-wrap items-center gap-5 md:gap-6 mb-10">
+      <h1 class="text-3xl md:text-4xl font-semibold tracking-tight">
+        Hi, I'm Bandar.
+      </h1>
+      <Crab />
     </div>
 
-    <!-- Headline -->
-    <h1
-      class="font-display font-semibold text-[3.25rem] sm:text-7xl md:text-8xl lg:text-[8.5rem] xl:text-[10.5rem] leading-[0.95] tracking-[-0.025em]"
-    >
-      <span class="block">Meet</span>
-      <span class="italic font-medium text-[var(--accent)]">Bandar</span>
-      Alharthy
-    </h1>
+    <div class="space-y-5 text-[17px] md:text-lg text-muted leading-relaxed">
+      <p>
+        I'm {age}, based in Tokyo and studying CS at Temple University Japan.
+      </p>
+      <p>
+        Currently building
+        <a
+          href="https://resumeai.guru"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-ink underline underline-offset-[5px] decoration-1 hover:opacity-60 transition-opacity"
+        >
+          Resume AI
+        </a>, an AI résumé builder.
+      </p>
+    </div>
 
-    <!-- Subhead -->
+    <!-- Compact socials -->
     <p
-      class="mt-7 md:mt-9 text-base md:text-lg lg:text-xl text-muted max-w-[44ch] mx-auto leading-relaxed"
+      class="mt-10 text-[14px] flex flex-wrap items-baseline gap-x-2 gap-y-1.5"
     >
-      Engineer from Saudi Arabia. Currently shipping
-      <a
-        href="https://resumeai.guru"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="!text-ink hover:!text-accent transition-colors underline decoration-[rgba(244,244,242,0.25)] underline-offset-[5px] hover:decoration-[var(--accent)]"
-      >
-        Resume AI
-      </a>.
+      <span class="label mr-1">Socials</span>
+      {
+        socials.map((s, i) => (
+          <>
+            {s.href === "#" ? (
+              <span class="text-muted">{s.label} (soon)</span>
+            ) : (
+              <a
+                href={s.href}
+                target={s.external ? "_blank" : undefined}
+                rel={s.external ? "noopener noreferrer" : undefined}
+                class="underline underline-offset-[4px] decoration-1 decoration-[color:var(--rule-soft)] hover:decoration-[color:var(--ink)] hover:opacity-100 transition-all"
+              >
+                {s.label}
+              </a>
+            )}
+            {i < socials.length - 1 && <span class="text-muted">·</span>}
+          </>
+        ))
+      }
     </p>
   </div>
-
-  <!-- Scroll cue -->
-  <div
-    class="absolute bottom-8 md:bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3"
-  >
-    <span class="label !text-[0.65rem] tracking-[0.28em]">Scroll</span>
-    <span
-      class="text-accent text-xl animate-pulse-soft"
-      aria-hidden="true"
-    >
-      ↓
-    </span>
-  </div>
 </section>
-
-<style>
-  @keyframes pulse-soft {
-    0%,
-    100% {
-      opacity: 0.6;
-      transform: translateY(0);
-    }
-    50% {
-      opacity: 1;
-      transform: translateY(3px);
-    }
-  }
-  .animate-pulse-soft {
-    animation: pulse-soft 2.4s ease-in-out infinite;
-  }
-</style>
