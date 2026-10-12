@@ -16,7 +16,7 @@ export const experience: Experience[] = [
     company: "Resume AI",
     location: "Remote",
     summary:
-      "Co-founded and shipped an AI résumé SaaS. It has 6,000+ users and 330+ trial starts. Built the full stack including auth, database, and AI workflows, and grew my personal TikTok to 7,000 followers and 700K monthly views promoting the product.",
+      "Co-founded and shipped an AI résumé SaaS. It has 6,000+ users. Built the full stack including auth, database, and AI workflows, and grew my personal TikTok to 7,000 followers and 700K monthly views promoting the product.",
     href: "https://resumeai.guru",
   },
   {

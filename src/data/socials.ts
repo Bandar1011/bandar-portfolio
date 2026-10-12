@@ -20,7 +20,7 @@ export const socials: Social[] = [
   },
   {
     label: "LinkedIn",
-    handle: "Bandar Alharthi",
+    handle: "Bandar Alharthy",
     href: "https://www.linkedin.com/in/bandar-alharthi1-90bwdw/",
     external: true,
   },
