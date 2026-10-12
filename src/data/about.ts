@@ -4,19 +4,15 @@ export interface Fact {
 }
 
 export const about = {
-  lead: "Software engineer in Tokyo. Building Resume AI.",
+  lead: "Self-taught software engineer in Jeddah. Building Talk, Sandy, and Resume AI.",
   paragraphs: [
     "I'm passionate about building products that have a genuine real world effect on the quality of people's lives. I care about the truth more than surface level things, ideas, or opinions.",
-    "Currently shipping Resume AI. It has 1,000+ users, 330+ trial starts, and over $1,000 in revenue. Before that I interned at OurFreedom.ai working on payments, the For You feed, and interaction systems.",
+    "Currently building Talk, Sandy, and Resume AI. Resume AI has 6,000+ users and 330+ trial starts. Before that I interned at OurFreedom.ai working on payments, the For You feed, and interaction systems.",
   ],
   facts: [
-    { label: "Based", value: "Tokyo" },
-    {
-      label: "Studying",
-      value:
-        "BS Computer Science, Temple University Japan (Class of 2028). On full scholarship from the Saudi government (Custodian of the Two Holy Mosques Foreign Scholarship Program).",
-    },
+    { label: "Based", value: "Jeddah" },
+    { label: "Education", value: "Self-taught" },
     { label: "Languages", value: "Arabic · English (native)" },
-    { label: "Working on", value: "Resume AI" },
+    { label: "Working on", value: "Talk · Sandy · Resume AI" },
   ] as Fact[],
 };

@@ -15,7 +15,7 @@ export const projects: Project[] = [
     kind: "SaaS",
     year: 2026,
     summary:
-      "AI résumé SaaS. 1,000+ users, 330+ trial starts, and over $1,000 in revenue. Full stack from scratch, including auth, database, and AI workflows.",
+      "AI résumé SaaS. 6,000+ users and 330+ trial starts. Full stack from scratch, including auth, database, and AI workflows.",
     href: "https://resumeai.guru",
     external: true,
   },
